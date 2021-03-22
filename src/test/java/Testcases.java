@@ -35,11 +35,68 @@ public class Testcases {
 
     @Test
     public void addStudentTest_success() {
-        assert(this.service.saveStudent("8","Carls",444)==0);
+        assert (this.service.saveStudent("8", "Carls", 444) == 0);
     }
 
     @Test
     public void addStudentTest_fail() {
-        assert(this.service.saveStudent("8","Carls",10098)==1);
+        assert (this.service.saveStudent("8", "Carls", 10098) == 1);
     }
+
+    //name
+    @Test
+    public void addStudentTest_name_success(){
+        assert (this.service.saveStudent("8", "Carls", 345) == 0);
+    }
+    @Test
+    public void addStudentTest_name_fail(){
+        assert (this.service.saveStudent("8", "", 345) == 1);
+    }
+
+    //id
+    @Test
+    public void addStudentTest_id_success(){
+        assert (this.service.saveStudent("8", "Carls", 345) == 0);
+    }
+    @Test
+    public void addStudentTest_id_fail(){
+        assert (this.service.saveStudent("", "Carls", 345) == 1);
+    }
+
+    //group
+    @Test
+    public void addStudentTest_group_success1(){
+        assert (this.service.saveStudent("8", "Carls", 112) == 0);
+    }
+    @Test
+    public void addStudentTest_group_success2(){
+        assert (this.service.saveStudent("8", "Carls", 111) == 0);
+    }
+    @Test
+    public void addStudentTest_group_success3(){
+        assert (this.service.saveStudent("8", "Carls", 936) == 0);
+    }
+    @Test
+    public void addStudentTest_group_success4(){
+        assert (this.service.saveStudent("8", "Carls", 937) == 0);
+    }
+
+    @Test
+    public void addStudentTest_group_fail1(){
+        assert (this.service.saveStudent("8", "Carls", 109) == 1);
+    }
+    @Test
+    public void addStudentTest_group_fail2(){
+        assert (this.service.saveStudent("8", "Carls", 110) == 1);
+    }
+    @Test
+    public void addStudentTest_group_fail3(){
+        assert (this.service.saveStudent("8", "Carls", 938) == 1);
+    }
+    @Test
+    public void addStudentTest_group_fail4(){
+        assert (this.service.saveStudent("8", "Carls", 939) == 1);
+    }
+
+
 }
