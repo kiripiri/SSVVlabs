@@ -45,58 +45,85 @@ public class Testcases {
 
     //name
     @Test
-    public void addStudentTest_name_success(){
+    public void addStudentTest_name_success() {
         assert (this.service.saveStudent("8", "Carls", 345) == 0);
     }
+
     @Test
-    public void addStudentTest_name_fail(){
+    public void addStudentTest_name_fail() {
         assert (this.service.saveStudent("8", "", 345) == 1);
     }
 
     //id
     @Test
-    public void addStudentTest_id_success(){
+    public void addStudentTest_id_success() {
         assert (this.service.saveStudent("8", "Carls", 345) == 0);
     }
+
     @Test
-    public void addStudentTest_id_fail(){
+    public void addStudentTest_id_fail() {
         assert (this.service.saveStudent("", "Carls", 345) == 1);
     }
 
     //group
     @Test
-    public void addStudentTest_group_success1(){
+    public void addStudentTest_group_success1() {
         assert (this.service.saveStudent("8", "Carls", 112) == 0);
     }
+
     @Test
-    public void addStudentTest_group_success2(){
+    public void addStudentTest_group_success2() {
         assert (this.service.saveStudent("8", "Carls", 111) == 0);
     }
+
     @Test
-    public void addStudentTest_group_success3(){
+    public void addStudentTest_group_success3() {
         assert (this.service.saveStudent("8", "Carls", 936) == 0);
     }
+
     @Test
-    public void addStudentTest_group_success4(){
+    public void addStudentTest_group_success4() {
         assert (this.service.saveStudent("8", "Carls", 937) == 0);
     }
 
     @Test
-    public void addStudentTest_group_fail1(){
+    public void addStudentTest_group_fail1() {
         assert (this.service.saveStudent("8", "Carls", 109) == 1);
     }
+
     @Test
-    public void addStudentTest_group_fail2(){
+    public void addStudentTest_group_fail2() {
         assert (this.service.saveStudent("8", "Carls", 110) == 1);
     }
+
     @Test
-    public void addStudentTest_group_fail3(){
+    public void addStudentTest_group_fail3() {
         assert (this.service.saveStudent("8", "Carls", 938) == 1);
     }
+
     @Test
-    public void addStudentTest_group_fail4(){
+    public void addStudentTest_group_fail4() {
         assert (this.service.saveStudent("8", "Carls", 939) == 1);
     }
 
+    @Test
+    public void addAssigment_id() {
+        Tema tema = new Tema("id", "descriere", 4, 1);
+        if (tema.getID() == null || tema.getID().equals("")) {
+            assert (this.service.saveTema(tema.getID(), tema.getDescriere(), tema.getDeadline(), tema.getStartline()) == 1);
+        } else {
+            assert (this.service.saveTema(tema.getID(), tema.getDescriere(), tema.getDeadline(), tema.getStartline()) == 0);
+        }
+    }
+
+    @Test
+    public void addAssigment_description() {
+        Tema tema = new Tema("id", "", 4, 1);
+        if (tema.getDescriere() == null || tema.getDescriere().equals("")) {
+            assert (this.service.saveTema(tema.getID(), tema.getDescriere(), tema.getDeadline(), tema.getStartline()) == 1);
+        } else {
+            assert (this.service.saveTema(tema.getID(), tema.getDescriere(), tema.getDeadline(), tema.getStartline()) == 0);
+        }
+    }
 
 }
