@@ -43,6 +43,7 @@ public class Testcases {
         assert (this.service.saveStudent("8", "Carls", 10098) == 1);
     }
 
+    //ADD STUDENT
     //name
     @Test
     public void addStudentTest_name_success() {
@@ -106,6 +107,8 @@ public class Testcases {
         assert (this.service.saveStudent("8", "Carls", 939) == 1);
     }
 
+    //ADD ASSIGNMENT
+    //id
     @Test
     public void addAssigment_id() {
         Tema tema = new Tema("id", "descriere", 4, 1);
@@ -116,9 +119,27 @@ public class Testcases {
         }
     }
 
+
+
+    //id
+    @Test
+    public void addAssigmentTest_id_valid() {
+        assert (this.service.saveTema("8", "lalala", 5,1) == 0);
+    }
+
+    @Test
+    public void addAssigmentTest_id_empty() {
+        assert (this.service.saveTema("", "Carls", 6, 1) == 1);
+    }
+    @Test
+    public void addAssigmentTest_id_null() {
+        assert (this.service.saveTema(null, "Carls", 5, 2) == 1);
+    }
+
+    //descriere
     @Test
     public void addAssigment_description() {
-        Tema tema = new Tema("id", "", 4, 1);
+        Tema tema = new Tema("id", "", 4, 10);
         if (tema.getDescriere() == null || tema.getDescriere().equals("")) {
             assert (this.service.saveTema(tema.getID(), tema.getDescriere(), tema.getDeadline(), tema.getStartline()) == 1);
         } else {
@@ -126,4 +147,69 @@ public class Testcases {
         }
     }
 
+    @Test
+    public void addAssigmentTest_description_valid() {
+        assert (this.service.saveTema("8", "Carls", 6,2) == 0);
+    }
+
+    @Test
+    public void addAssigmentTest_description_empty() {
+        assert (this.service.saveTema("8", "", 5,3) == 1);
+    }
+
+    @Test
+    public void addAssigmentTest_description_null() {
+        assert (this.service.saveTema("8", null, 7,2) == 1);
+    }
+
+    //deadline
+    @Test
+    public void addAssigment_deadline() {
+        Tema tema = new Tema("id", "lala", 2, 17);
+        if (tema.getDeadline() < 1 || tema.getDeadline() > 14 || tema.getDeadline() < tema.getStartline()) {
+            assert (this.service.saveTema(tema.getID(), tema.getDescriere(), tema.getDeadline(), tema.getStartline()) == 1);
+        } else {
+            assert (this.service.saveTema(tema.getID(), tema.getDescriere(), tema.getDeadline(), tema.getStartline()) == 0);
+        }
+    }
+    @Test
+    public void addAssigment_deadline_valid() {
+        assert (this.service.saveTema("8", "Carls", 6,2) == 0);
+    }
+
+    @Test
+    public void addAssigment_deadline_smaller() {
+        assert (this.service.saveTema("8", "Carls", 0,2) == 1);
+    }
+
+    @Test
+    public void addAssigment_deadline_bigger() {
+        assert (this.service.saveTema("8", "Carls", 15,2) == 1);
+    }
+
+    //startline
+    @Test
+    public void addAssigment_startline() {
+        Tema tema = new Tema("id", "lala", 1, 12);
+        if (tema.getStartline() < 1 || tema.getStartline() > 14 || tema.getDeadline() < tema.getStartline()) {
+            assert (this.service.saveTema(tema.getID(), tema.getDescriere(), tema.getDeadline(), tema.getStartline()) == 1);
+        } else {
+            assert (this.service.saveTema(tema.getID(), tema.getDescriere(), tema.getDeadline(), tema.getStartline()) == 0);
+        }
+    }
+
+    @Test
+    public void addAssigment_startline_valid() {
+        assert (this.service.saveTema("8", "Carls", 6,2) == 0);
+    }
+
+    @Test
+    public void addAssigment_startline_smaller() {
+        assert (this.service.saveTema("8", "Carls", 5,0) == 1);
+    }
+
+    @Test
+    public void addAssigment_startline_bigger() {
+        assert (this.service.saveTema("8", "Carls", 6,15) == 1);
+    }
 }
