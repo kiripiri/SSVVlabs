@@ -10,9 +10,44 @@
         <SaptamanaPredare>9</SaptamanaPredare>
         <Feedback>done</Feedback>
     </nota>
+    <nota IDStudent="2" IDTema="3">
+        <Nota>10.0</Nota>
+        <SaptamanaPredare>8</SaptamanaPredare>
+        <Feedback>temaaaa</Feedback>
+    </nota>
+    <nota IDStudent="5" IDTema="6">
+        <Nota>4.5</Nota>
+        <SaptamanaPredare>5</SaptamanaPredare>
+        <Feedback>f1</Feedback>
+    </nota>
     <nota IDStudent="1" IDTema="4">
         <Nota>6.5</Nota>
         <SaptamanaPredare>8</SaptamanaPredare>
         <Feedback>super</Feedback>
+    </nota>
+    <nota IDStudent="8" IDTema="3">
+        <Nota>9.5</Nota>
+        <SaptamanaPredare>8</SaptamanaPredare>
+        <Feedback>lalalalaalalala</Feedback>
+    </nota>
+    <nota IDStudent="8" IDTema="4">
+        <Nota>10.0</Nota>
+        <SaptamanaPredare>5</SaptamanaPredare>
+        <Feedback>gloriaa</Feedback>
+    </nota>
+    <nota IDStudent="6" IDTema="3">
+        <Nota>9.5</Nota>
+        <SaptamanaPredare>8</SaptamanaPredare>
+        <Feedback>suusus</Feedback>
+    </nota>
+    <nota IDStudent="5" IDTema="3">
+        <Nota>8.5</Nota>
+        <SaptamanaPredare>8</SaptamanaPredare>
+        <Feedback>feedback</Feedback>
+    </nota>
+    <nota IDStudent="8" IDTema="6">
+        <Nota>5.5</Nota>
+        <SaptamanaPredare>5</SaptamanaPredare>
+        <Feedback>llllllll</Feedback>
     </nota>
 </Entitati>
